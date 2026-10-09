@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Practi+ | BanBif</title>
-  <!-- Tipografía Oficial Poppins y Caveat (letra manuscrita) -->
+  <!-- Tipografía Oficial y Letra Manuscrita -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
@@ -16,9 +16,9 @@
   <header class="topbar">
     <div class="topbar-container">
       <a class="brand" href="#inicio">
-        <!-- Logo Oficial BanBif -->
-        <div class="banbif-logo-text">
-          BanB<span class="dot-o">°</span>if
+        <!-- LOGO OFICIAL BANBIF VECTORIAL -->
+        <div class="banbif-official-logo">
+          <span class="logo-text">BanB</span><span class="logo-i-dot">°</span><span class="logo-text">if</span>
         </div>
       </a>
       <nav class="nav-menu">
@@ -34,7 +34,7 @@
   </header>
 
   <main>
-    <!-- HERO SECTION CON FOTO PRINCIPAL -->
+    <!-- HERO SECTION -->
     <section class="hero-section" id="inicio">
       <div class="hero-wrapper">
         <div class="hero-copy">
@@ -55,7 +55,7 @@
           </div>
         </div>
 
-        <!-- FOTO DE JÓVENES BANBIF -->
+        <!-- FOTO PRINCIPAL -->
         <div class="hero-media">
           <div class="photo-card-frame">
             <img class="hero-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Equipo BanBif">
@@ -70,7 +70,7 @@
       </div>
     </section>
 
-    <!-- ¿POR QUÉ UNIRTE A PRACTI+? -->
+    <!-- VENTAJAS / POR QUÉ SUMARTE -->
     <section class="benefits-section" id="programa">
       <h2>¿Por qué sumarte a Practi+?</h2>
       <p class="section-sub">Te damos las herramientas para que llegues tan lejos como quieras.</p>
@@ -99,40 +99,43 @@
       </div>
     </section>
 
-    <!-- HISTORIAS QUE INSPIRAN -->
+    <!-- HISTORIAS QUE INSPIRAN CON VIDEOS INTERACTIVOS -->
     <section class="stories-section" id="historias">
       <div class="stories-container">
         <div class="stories-left">
           <h2>Historias<br><span class="text-purple">que inspiran</span></h2>
-          <p>Conoce la experiencia de quienes forman parte de BanBif y descubre todo lo que puedes lograr.</p>
+          <p>Conoce la experiencia de quienes forman parte de BanBif y descubre todo lo que puedes lograr en Practi+.</p>
           <a href="#historias" class="link-arrow">Ver todas las historias ➔</a>
         </div>
         
         <div class="stories-right-grid">
-          <div class="video-card">
+          <!-- CARD 1 VIDEO -->
+          <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
             <div class="video-thumb">
               <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Valeria">
-              <div class="play-overlay"><span>▶</span></div>
+              <div class="play-overlay"><span class="play-btn-icon">▶</span></div>
             </div>
             <h4>Valeria</h4>
             <span class="role-tag">Practicante de Riesgos</span>
             <p>"En BanBif encontré un espacio para aprender, aportar y crecer profesionalmente."</p>
           </div>
 
-          <div class="video-card">
+          <!-- CARD 2 VIDEO -->
+          <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
             <div class="video-thumb">
               <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="Diego">
-              <div class="play-overlay"><span>▶</span></div>
+              <div class="play-overlay"><span class="play-btn-icon">▶</span></div>
             </div>
             <h4>Diego</h4>
             <span class="role-tag">Practicante de Tecnología</span>
             <p>"Desde el primer día participé en proyectos desafiantes que realmente generan impacto."</p>
           </div>
 
-          <div class="video-card">
+          <!-- CARD 3 VIDEO -->
+          <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
             <div class="video-thumb">
               <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Camila">
-              <div class="play-overlay"><span>▶</span></div>
+              <div class="play-overlay"><span class="play-btn-icon">▶</span></div>
             </div>
             <h4>Camila</h4>
             <span class="role-tag">Practicante de Gestión Humana</span>
@@ -160,7 +163,7 @@
       </div>
     </section>
 
-    <!-- BANNER CON FOTO -->
+    <!-- BANNER LLAMADO A ACCIÓN -->
     <section class="banner-cta-section">
       <div class="banner-cta-wrapper">
         <div class="banner-cta-text">
@@ -227,7 +230,7 @@
       </div>
     </section>
 
-    <!-- FORMULARIO CONECTADO A GOOGLE APPS SCRIPT -->
+    <!-- FORMULARIO / BASE DE DATOS -->
     <section class="form-container-section" id="registro">
       <div class="form-card-wrapper">
         <h2>Únete a nuestra base de talento (Practi+)</h2>
@@ -395,15 +398,25 @@
     </section>
   </main>
 
-  <!-- MODAL DE LA LEY N° 29733 -->
+  <!-- MODAL PARA VER VIDEOS -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content video-modal-content">
+      <span class="close-btn" onclick="closeVideoModal()">&times;</span>
+      <div class="iframe-container">
+        <iframe id="videoPlayer" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL LEY N° 29733 -->
   <div id="lawModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
       <h3>Política de Protección de Datos Personales</h3>
       <p><strong>Ley N° 29733 - Ley de Protección de Datos Personales de Perú</strong></p>
       <p>En cumplimiento con lo establecido en la Ley N° 29733 y su Reglamento, BanBif informa al postulante que los datos personales que proporcione a través de este formulario serán incorporados a nuestro banco de datos de gestión de talento y reclutamiento.</p>
-      <p><strong>Finalidad:</strong> Evaluar tu perfil académico y profesional para participar en Practi+ y procesos de selección.</p>
-      <p><strong>Derechos ARCO:</strong> Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación y oposición respecto a tus datos personales mediante una solicitud dirigida a BanBif.</p>
+      <p><strong>Finalidad:</strong> Evaluar tu perfil académico y profesional para participar en Practi+ y convocatorias de selección.</p>
+      <p><strong>Derechos ARCO:</strong> Puedes ejercer en cualquier momento tus derechos respecto a tus datos personales mediante una solicitud dirigida a BanBif.</p>
       <button class="btn-modal-close" id="acceptLaw">Entendido y Acepto</button>
     </div>
   </div>
