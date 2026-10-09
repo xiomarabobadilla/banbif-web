@@ -4,201 +4,255 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Programa de Practicantes | BanBif</title>
+  <!-- Tipografía Oficial Poppins y Caveat (letra manuscrita) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ENCABEZADO CON NAVEGACIÓN COMPLETA -->
+  <!-- TOPBAR FIJA -->
   <header class="topbar">
-    <a class="brand" href="#inicio">
-      <span class="logo-box">BanB<span class="dot">°</span>if</span>
-    </a>
-    <nav class="nav-menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#programa">Conócenos</a>
-      <a href="#programa">Programa de Practicantes</a>
-      <a href="#areas">Áreas</a>
-      <a href="#historias">Historias</a>
-      <a href="#faq">Preguntas Frecuentes</a>
-    </nav>
-    <a class="nav-cta" href="#registro">Postula aquí →</a>
+    <div class="topbar-container">
+      <a class="brand" href="#inicio">
+        <!-- Logo en alta definición SVG -->
+        <svg class="banbif-svg-logo" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="38" font-family="'Poppins', sans-serif" font-weight="800" font-size="36" fill="#2563EB">Ban</text>
+          <text x="78" y="38" font-family="'Poppins', sans-serif" font-weight="800" font-size="36" fill="#2563EB">B</text>
+          <circle cx="106" cy="14" r="5" fill="#A3E635" />
+          <text x="102" y="38" font-family="'Poppins', sans-serif" font-weight="800" font-size="36" fill="#2563EB">if</text>
+        </svg>
+      </a>
+      <nav class="nav-menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#programa">Conócenos</a>
+        <a href="#programa">Programa de Practicantes</a>
+        <a href="#areas">Áreas</a>
+        <a href="#historias">Historias</a>
+        <a href="#faq">Preguntas Frecuentes</a>
+      </nav>
+      <a class="nav-cta" href="#registro">Postula aquí ➔</a>
+    </div>
   </header>
 
   <main>
-    <!-- HERO SECCIÓN BANNER -->
-    <section class="hero" id="inicio">
-      <div class="hero-copy">
-        <span class="badge-sub">PROGRAMA DE PRACTICANTES BANBIF</span>
-        <h1>Impulsa<br><em>tu futuro</em><br>con BanBif</h1>
-        <p>Conecta con oportunidades reales, proyectos retadores y líderes que creen en tu potencial.</p>
-        <div class="hero-buttons">
-          <a class="btn lime" href="#vacantes">Ver oportunidades →</a>
-          <a class="btn outline" href="#registro">Deja tu CV</a>
+    <!-- HERO SECTION CON FOTO PRINCIPAL -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-wrapper">
+        <div class="hero-copy">
+          <span class="badge-sub">PROGRAMA DE PRACTICANTES BANBIF</span>
+          <h1>Impulsa<br><span class="highlight-lime">tu futuro</span><br>con BanBif</h1>
+          <p>Conecta con oportunidades reales, proyectos retadores y líderes que creen en tu potencial.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-lime" href="#vacantes">Ver oportunidades ➔</a>
+            <a class="btn btn-outline" href="#registro">Deja tu CV</a>
+          </div>
+          <div class="social-proof">
+            <div class="avatar-group">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="avatar">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="avatar">
+            </div>
+            <span><strong>+100 jóvenes</strong> ya vienen construyendo su historia en BanBif</span>
+          </div>
         </div>
-        <div class="social-proof">
-          <span class="avatars">👥👥👥</span>
-          <span><strong>+100 jóvenes</strong> ya vienen construyendo su historia en BanBif</span>
-        </div>
-      </div>
-      <div class="hero-card-badge">
-        <p class="tagline-hand font-hand">Personas que hacen que las cosas pasen</p>
-        <div class="hero-tag-box">
-          <span>Más que un banco, un lugar donde puedes ser tú 💜</span>
+
+        <!-- FOTO DE JÓVENES BANBIF -->
+        <div class="hero-media">
+          <div class="photo-card-frame">
+            <img class="hero-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Equipo BanBif">
+            <div class="floating-handwriting">
+              <span class="handwriting">Personas<br>que hacen<br>que las cosas<br>pasen</span>
+            </div>
+            <div class="floating-glass-pill">
+              <span>Más que un banco,<br>un lugar donde puedes ser tú 💜</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- VENTAJAS / POR QUÉ SER PRACTICANTE -->
-    <section class="benefits" id="programa">
+    <!-- ¿POR QUÉ SER PRACTICANTE? -->
+    <section class="benefits-section" id="programa">
       <h2>¿Por qué ser practicante en BanBif?</h2>
-      <p class="sub">Te damos las herramientas para que llegues tan lejos como quieras.</p>
-      <div class="benefit-grid">
-        <article class="benefit-card">
-          <div class="icon">🚀</div>
+      <p class="section-sub">Te damos las herramientas para que llegues tan lejos como quieras.</p>
+      
+      <div class="benefit-cards-grid">
+        <article class="b-card">
+          <div class="b-icon-box">🚀</div>
           <h3>Aprendizaje constante</h3>
           <p>Participa en proyectos reales desde el primer día.</p>
         </article>
-        <article class="benefit-card">
-          <div class="icon">👥</div>
+        <article class="b-card">
+          <div class="b-icon-box">👥</div>
           <h3>Acompañamiento</h3>
           <p>Cuenta con el apoyo de líderes que creen en tu talento.</p>
         </article>
-        <article class="benefit-card">
-          <div class="icon">💡</div>
+        <article class="b-card">
+          <div class="b-icon-box">💡</div>
           <h3>Innovación con propósito</h3>
           <p>Sé parte de un banco que impulsa el cambio.</p>
         </article>
-        <article class="benefit-card">
-          <div class="icon">🏠</div>
+        <article class="b-card">
+          <div class="b-icon-box">🏠</div>
           <h3>Modalidad flexible</h3>
           <p>Equilibra tu vida personal y profesional.</p>
         </article>
       </div>
     </section>
 
-    <!-- HISTORIAS QUE INSPIRAN -->
-    <section class="stories" id="historias">
-      <div class="stories-header">
-        <div>
-          <h2>Historias<br><span class="highlight-purple">que inspiran</span></h2>
+    <!-- HISTORIAS QUE INSPIRAN (CON VIDEOS/FOTOS REALES) -->
+    <section class="stories-section" id="historias">
+      <div class="stories-container">
+        <div class="stories-left">
+          <h2>Historias<br><span class="text-purple">que inspiran</span></h2>
           <p>Conoce la experiencia de nuestros practicantes y descubre todo lo que puedes lograr en BanBif.</p>
-          <a href="#historias" class="btn-text">Ver todas las historias →</a>
+          <a href="#historias" class="link-arrow">Ver todas las historias ➔</a>
         </div>
-        <div class="stories-grid">
-          <div class="story-card">
-            <div class="play-btn">▶</div>
+        
+        <div class="stories-right-grid">
+          <!-- CARD 1 -->
+          <div class="video-card">
+            <div class="video-thumb">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Valeria">
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
             <h4>Valeria</h4>
-            <p class="role">Practicante de Riesgos</p>
-            <p class="quote">"En BanBif encontré un espacio para aprender, aportar y crecer profesionalmente."</p>
+            <span class="role-tag">Practicante de Riesgos</span>
+            <p>"En BanBif encontré un espacio para aprender, aportar y crecer profesionalmente."</p>
           </div>
-          <div class="story-card">
-            <div class="play-btn">▶</div>
+
+          <!-- CARD 2 -->
+          <div class="video-card">
+            <div class="video-thumb">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" alt="Diego">
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
             <h4>Diego</h4>
-            <p class="role">Practicante de Tecnología</p>
-            <p class="quote">"Desde el primer día participé en proyectos desafiantes que realmente generan impacto."</p>
+            <span class="role-tag">Practicante de Tecnología</span>
+            <p>"Desde el primer día participé en proyectos desafiantes que realmente generan impacto."</p>
           </div>
-          <div class="story-card">
-            <div class="play-btn">▶</div>
+
+          <!-- CARD 3 -->
+          <div class="video-card">
+            <div class="video-thumb">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Camila">
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
             <h4>Camila</h4>
-            <p class="role">Practicante de Gestión Humana</p>
-            <p class="quote">"Lo mejor de BanBif son las personas y la oportunidad de desarrollar todo mi potencial."</p>
+            <span class="role-tag">Practicante de Gestión Humana</span>
+            <p>"Lo mejor de BanBif son las personas y la oportunidad de desarrollar todo mi potencial."</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ÁREAS -->
-    <section class="areas" id="areas">
-      <div class="areas-top">
+    <section class="areas-section" id="areas">
+      <div class="section-header-flex">
         <h2>Áreas donde puedes desarrollarte</h2>
-        <a href="#areas" class="link-more">Conoce todas las áreas →</a>
+        <a href="#areas" class="link-arrow">Conoce todas las áreas ➔</a>
       </div>
-      <div class="area-grid">
-        <div class="area-item">💻 Tecnologia</div>
-        <div class="area-item">📊 Data & Analytics</div>
-        <div class="area-item">💰 Finanzas</div>
-        <div class="area-item">👥 Gestión Humana</div>
-        <div class="area-item">🛡️ Riesgos</div>
-        <div class="area-item">⚙️ Operaciones</div>
-        <div class="area-item">🏦 Banca Comercial</div>
-        <div class="area-item">📣 Marketing</div>
+      <div class="areas-pills-grid">
+        <div class="area-pill"><span class="a-icon">💻</span> Tecnología</div>
+        <div class="area-pill"><span class="a-icon">📊</span> Data & Analytics</div>
+        <div class="area-pill"><span class="a-icon">💰</span> Finanzas</div>
+        <div class="area-pill"><span class="a-icon">👥</span> Gestión Humana</div>
+        <div class="area-pill"><span class="a-icon">🛡️</span> Riesgos</div>
+        <div class="area-pill"><span class="a-icon">⚙️</span> Operaciones</div>
+        <div class="area-pill"><span class="a-icon">🏦</span> Banca Comercial</div>
+        <div class="area-pill"><span class="a-icon">📣</span> Marketing</div>
       </div>
     </section>
 
-    <!-- BANNER LLAMADO A ACCIÓN -->
-    <section class="cta-banner">
-      <div class="cta-content">
-        <h2>¿Listo para dar el primer paso?</h2>
-        <p>Explora nuestras vacantes o déjanos tu CV aunque no encuentres una posición activa. ¡Queremos conocerte!</p>
-        <div class="cta-buttons">
-          <a class="btn lime" href="#vacantes">Ver vacantes →</a>
-          <a class="btn outline" href="#registro">Dejar mi CV</a>
+    <!-- BANNER CON FOTO Y MANUSCRITO -->
+    <section class="banner-cta-section">
+      <div class="banner-cta-wrapper">
+        <div class="banner-cta-text">
+          <h2>¿Listo para dar el primer paso?</h2>
+          <p>Explora nuestras vacantes o déjanos tu CV aunque no encuentres una posición activa. ¡Queremos conocerte!</p>
+          <div class="hero-buttons">
+            <a class="btn btn-lime" href="#vacantes">Ver vacantes ➔</a>
+            <a class="btn btn-outline" href="#registro">Dejar mi CV</a>
+          </div>
         </div>
-      </div>
-      <div class="cta-card">
-        <p class="font-hand">Tu historia también puede estar aquí</p>
-        <ul>
-          <li>⭐ Nuevas experiencias</li>
-          <li>👥 Grandes personas</li>
-          <li>💙 Un mejor futuro</li>
-        </ul>
+        <div class="banner-cta-photo">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" alt="Chico BanBif">
+          <span class="handwriting floating-cta-text">Tu historia también puede estar aquí</span>
+          <div class="cta-floating-box">
+            <ul>
+              <li>⭐ Nuevas experiencias</li>
+              <li>👥 Grandes personas</li>
+              <li>💙 Un mejor futuro</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- VACANTES DESTACADAS -->
-    <section class="vacancies" id="vacantes">
-      <div class="vacancies-top">
+    <section class="vacancies-section" id="vacantes">
+      <div class="section-header-flex">
         <h2>Vacantes destacadas</h2>
-        <a href="#vacantes" class="link-more">Ver todas las vacantes →</a>
+        <a href="#vacantes" class="link-arrow">Ver todas las vacantes ➔</a>
       </div>
-      <div class="vacancy-grid">
-        <article class="vacancy-card">
-          <div class="v-icon">📄</div>
+      <div class="vacancies-cards-grid">
+        <article class="v-card">
+          <div class="v-card-top">
+            <span class="v-icon">📄</span>
+            <span class="bookmark-icon">🔖</span>
+          </div>
           <h3>Practicante de Productividad</h3>
-          <p>📍 Lima | Híbrido</p>
-          <small>Área: Operaciones</small>
-          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular →</a>
+          <p class="v-location">📍 Lima | Híbrido</p>
+          <p class="v-area">Área: Operaciones</p>
+          <a href="#registro" class="btn-postular-pill">Postular ➔</a>
         </article>
-        <article class="vacancy-card">
-          <div class="v-icon">📊</div>
+
+        <article class="v-card">
+          <div class="v-card-top">
+            <span class="v-icon">📊</span>
+            <span class="bookmark-icon">🔖</span>
+          </div>
           <h3>Practicante de Análisis de Datos</h3>
-          <p>📍 Lima | Híbrido</p>
-          <small>Área: Finanzas</small>
-          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular →</a>
+          <p class="v-location">📍 Lima | Híbrido</p>
+          <p class="v-area">Área: Finanzas</p>
+          <a href="#registro" class="btn-postular-pill">Postular ➔</a>
         </article>
-        <article class="vacancy-card">
-          <div class="v-icon">👥</div>
+
+        <article class="v-card">
+          <div class="v-card-top">
+            <span class="v-icon">👥</span>
+            <span class="bookmark-icon">🔖</span>
+          </div>
           <h3>Practicante de Talento y Cultura</h3>
-          <p>📍 Lima | Híbrido</p>
-          <small>Área: Gestión Humana</small>
-          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular →</a>
+          <p class="v-location">📍 Lima | Híbrido</p>
+          <p class="v-area">Área: Gestión Humana</p>
+          <a href="#registro" class="btn-postular-pill">Postular ➔</a>
         </article>
       </div>
     </section>
 
-    <!-- SECCIÓN BASE DE DATOS / FORMULARIO REGISTRO -->
-    <section class="register-section" id="registro">
-      <div class="register-card">
+    <!-- FORMULARIO OFICIAL CONECTADO A GOOGLE APPS SCRIPT -->
+    <section class="form-container-section" id="registro">
+      <div class="form-card-wrapper">
         <h2>Únete a nuestra base de talento</h2>
-        <p class="subtitle">Déjanos tus datos para recibir información sobre prácticas y convocatorias.</p>
+        <p class="form-sub-title">Déjanos tus datos para recibir información sobre prácticas y convocatorias.</p>
 
         <form id="talent-form">
-          <div class="form-row">
-            <div class="form-group">
+          <div class="form-row-2col">
+            <div class="f-group">
               <label for="nombre">Nombres y Apellidos *</label>
               <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Pérez" required>
             </div>
-            <div class="form-group">
+            <div class="f-group">
               <label for="dni">DNI / Documento de Identidad *</label>
               <input type="text" id="dni" name="dni" placeholder="Ej. 76543210" maxlength="12" required>
             </div>
           </div>
 
           <!-- UNIVERSIDAD -->
-          <div class="form-group">
+          <div class="f-group">
             <label for="universidad">Universidad *</label>
             <select id="universidad" name="universidad" required>
               <option value="">Selecciona Universidad...</option>
@@ -213,157 +267,4 @@
               <option value="UDEP">Universidad de Piura (UDEP)</option>
               <option value="URP">Universidad Ricardo Palma (URP)</option>
               <option value="Universidad ESAN">Universidad ESAN</option>
-              <option value="UNALM">Universidad Nacional Agraria La Molina (UNALM)</option>
-              <option value="UNFV">Universidad Nacional Federico Villarreal (UNFV)</option>
-              <option value="UTP">Universidad Tecnológica del Perú (UTP)</option>
-              <option value="UCSUR">Universidad Científica del Sur (UCSUR)</option>
-              <option value="UCV">Universidad César Vallejo (UCV)</option>
-              <option value="UPN">Universidad Privada del Norte (UPN)</option>
-              <option value="UNW">Universidad Norbert Wiener (UNW)</option>
-              <option value="Otros">Otro / Especifique</option>
-            </select>
-          </div>
-
-          <div class="form-group hidden" id="otraUniContainer">
-            <label for="otraUniversidad">Especifique su Universidad *</label>
-            <input type="text" id="otraUniversidad" name="otraUniversidad" placeholder="Ej. Universidad Nacional de Trujillo">
-          </div>
-
-          <div class="form-row">
-            <!-- CARRERA -->
-            <div class="form-group">
-              <label for="carrera">Carrera *</label>
-              <select id="carrera" name="carrera" required>
-                <option value="">Selecciona Carrera...</option>
-                <option value="Administración">Administración</option>
-                <option value="Comunicaciones">Comunicaciones</option>
-                <option value="Contabilidad">Contabilidad</option>
-                <option value="Economía">Economía</option>
-                <option value="Estadística">Estadística</option>
-                <option value="Finanzas">Finanzas</option>
-                <option value="Gestión y alta dirección">Gestión y alta dirección</option>
-                <option value="Ingeniería Industrial">Ingeniería Industrial</option>
-                <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
-                <option value="Ingeniería de Software">Ingeniería de Software</option>
-                <option value="Ingeniería de Gestión Empresarial">Ingeniería de Gestión Empresarial</option>
-                <option value="Marketing">Marketing</option>
-                <option value="Negocios Internacionales">Negocios Internacionales</option>
-                <option value="Psicología">Psicología</option>
-                <option value="Otros">Otro / Especifique</option>
-              </select>
-            </div>
-
-            <!-- CICLO -->
-            <div class="form-group">
-              <label for="ciclo">Ciclo *</label>
-              <select id="ciclo" name="ciclo" required>
-                <option value="">Selecciona Ciclo...</option>
-                <option value="1er Ciclo">1er Ciclo</option>
-                <option value="2do Ciclo">2do Ciclo</option>
-                <option value="3er Ciclo">3er Ciclo</option>
-                <option value="4to Ciclo">4to Ciclo</option>
-                <option value="5to Ciclo">5to Ciclo</option>
-                <option value="6to Ciclo">6to Ciclo</option>
-                <option value="7mo Ciclo">7mo Ciclo</option>
-                <option value="8vo Ciclo">8vo Ciclo</option>
-                <option value="9no Ciclo">9no Ciclo</option>
-                <option value="10mo Ciclo">10mo Ciclo</option>
-                <option value="11avo Ciclo">11avo Ciclo</option>
-                <option value="12avo Ciclo">12avo Ciclo</option>
-                <option value="Egresado">Egresado/a</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group hidden" id="otraCarreraContainer">
-            <label for="otraCarrera">Especifique su Carrera *</label>
-            <input type="text" id="otraCarrera" name="otraCarrera" placeholder="Ej. Biología">
-          </div>
-
-          <!-- ÁREA DE INTERÉS -->
-          <div class="form-group">
-            <label for="area">Área de Interés en BanBif *</label>
-            <select id="area" name="area" required>
-              <option value="">Selecciona Área de Interés...</option>
-              <option value="Inversiones">Inversiones</option>
-              <option value="Producto">Producto</option>
-              <option value="Finanzas">Finanzas</option>
-              <option value="Recursos Humanos">Recursos Humanos</option>
-              <option value="Riesgos">Riesgos</option>
-              <option value="Área comercial">Área comercial</option>
-              <option value="Tecnología">Tecnología</option>
-              <option value="Marketing">Marketing</option>
-              <option value="Operaciones">Operaciones</option>
-              <option value="Legal">Legal</option>
-              <option value="Procesos">Procesos</option>
-              <option value="Mercado de Capitales">Mercado de Capitales</option>
-              <option value="Otros">Otro / Especifique</option>
-            </select>
-          </div>
-
-          <div class="form-group hidden" id="otraAreaContainer">
-            <label for="otraArea">Especifique su Área de Interés *</label>
-            <input type="text" id="otraArea" name="otraArea" placeholder="Ej. Auditoría Interna">
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="correo">Correo Electrónico *</label>
-              <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
-            </div>
-            <div class="form-group">
-              <label for="celular">Celular *</label>
-              <input type="tel" id="celular" name="celular" placeholder="987654321" maxlength="9" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="disponibilidad">Disponibilidad de Horario (30h semanales) *</label>
-            <textarea id="disponibilidad" name="disponibilidad" rows="2" placeholder="Ej. Mañanas libres de 8am a 2pm" required></textarea>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="cv">Adjunta tu CV <span class="optional">(Opcional)</span></label>
-              <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
-            </div>
-            <div class="form-group">
-              <label for="horario">Adjunta tu Horario <span class="optional">(Opcional)</span></label>
-              <input type="file" id="horario" name="horario" accept=".pdf,.png,.jpg,.jpeg">
-            </div>
-          </div>
-
-          <div class="form-checkbox">
-            <input type="checkbox" id="leyData" name="leyData" required>
-            <label for="leyData">
-              Acepto el tratamiento de mis datos personales (<a href="#" id="openModal">Ley N° 29733</a>).
-            </label>
-          </div>
-
-          <button type="submit" class="btn-submit">🚀 Registrarme</button>
-          <p id="form-status" class="form-status"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- MODAL DE LA LEY N° 29733 -->
-  <div id="lawModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h3>Política de Protección de Datos Personales</h3>
-      <p><strong>Ley N° 29733 - Ley de Protección de Datos Personales de Perú</strong></p>
-      <p>En cumplimiento con lo establecido en la Ley N° 29733 y su Reglamento, BanBif informa al postulante que los datos personales que proporcione a través de este formulario serán incorporados a nuestro banco de datos de gestión de talento y reclutamiento.</p>
-      <p><strong>Finalidad:</strong> Evaluar tu perfil académico y profesional para participar en nuestros procesos de selección de prácticas preprofesionales y profesionales.</p>
-      <p><strong>Derechos ARCO:</strong> Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación y oposición respecto a tus datos personales mediante una solicitud dirigida a BanBif.</p>
-      <button class="btn-modal-close" id="acceptLaw">Entendido y Acepto</button>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2026 BanBif. Todos los derechos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+              <option value="UNAL
