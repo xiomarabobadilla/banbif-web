@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   
+  // PREGUNTAS FRECUENTES (FAQ ACCORDEON)
+  const faqQuestions = document.querySelectorAll(".faq-question");
+  faqQuestions.forEach(question => {
+    question.addEventListener("click", function () {
+      const faqItem = this.parentElement;
+      faqItem.classList.toggle("active");
+    });
+  });
+
   // LOGICA CAMPOS "OTROS"
   const uniSelect = document.getElementById('universidad');
   const otraUniContainer = document.getElementById('otraUniContainer');
@@ -52,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // MODAL LEY
+  // MODAL LEY N° 29733
   const modal = document.getElementById("lawModal");
   const openModalBtn = document.getElementById("openModal");
   const closeModalBtn = document.getElementById("closeModal");
@@ -78,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ENVÍO FORMULARIO
+  // ENVÍO FORMULARIO (WEBHOOK APPS SCRIPT)
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvMzkY_l94kPKV0vVeXWAYnfH8pWyIZGgo51QW8CRHu8sPh0_3vPSTFpo2JaYPvIIQ/exec';
   const talentForm = document.getElementById('talent-form');
 
@@ -127,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// FUNCIONES PARA VIDEOS
+// FUNCIONES REPRODUCCIÓN DE VIDEO
 function openVideoModal(videoUrl) {
   const modal = document.getElementById('videoModal');
   const player = document.getElementById('videoPlayer');
