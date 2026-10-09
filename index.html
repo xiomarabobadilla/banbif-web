@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programa de Practicantes | BanBif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO CON LOGO -->
+  <header class="topbar">
+    <a class="brand" href="#inicio">
+      <span class="logo-box">BanB<span class="dot">°</span>if</span>
+    </a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#programa">Programa</a>
+      <a href="#areas">Áreas</a>
+      <a href="#vacantes">Vacantes</a>
+    </nav>
+    <a class="nav-cta" href="#registro">Postula aquí</a>
+  </header>
+
+  <main>
+    <!-- HERO SECCIÓN BANNER -->
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <h1>Impulsa<br><em>tu futuro</em><br>con BanBif</h1>
+        <p>Conecta con oportunidades reales, proyectos retadores y un equipo que cree en tu potencial.</p>
+        <div class="hero-buttons">
+          <a class="btn lime" href="#vacantes">Ver oportunidades →</a>
+          <a class="btn outline" href="#registro">Deja tu CV</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p class="tagline">Personas que hacen que las cosas pasen</p>
+      </div>
+    </section>
+
+    <!-- VENTAJAS / POR QUÉ SER PRACTICANTE -->
+    <section class="benefits" id="programa">
+      <h2>¿Por qué ser practicante en BanBif?</h2>
+      <p class="sub">Te damos las herramientas para que llegues tan lejos como quieras.</p>
+      <div class="benefit-grid">
+        <article class="benefit-card">
+          <div class="icon">🚀</div>
+          <h3>Aprendizaje constante</h3>
+          <p>Participa en proyectos reales desde el primer día.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="icon">👥</div>
+          <h3>Acompañamiento</h3>
+          <p>Cuenta con el apoyo de líderes que creen en tu talento.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="icon">💡</div>
+          <h3>Innovación con propósito</h3>
+          <p>Sé parte de un banco que impulsa el cambio.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="icon">🏠</div>
+          <h3>Modalidad flexible</h3>
+          <p>Equilibra tu vida personal y profesional.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ÁREAS -->
+    <section class="areas" id="areas">
+      <h2>Áreas donde puedes desarrollarte</h2>
+      <div class="area-grid">
+        <div class="area-item">💻 Tecnología</div>
+        <div class="area-item">📊 Data & Analytics</div>
+        <div class="area-item">💰 Finanzas</div>
+        <div class="area-item">👥 Gestión Humana</div>
+        <div class="area-item">🛡️ Riesgos</div>
+        <div class="area-item">⚙️ Operaciones</div>
+        <div class="area-item">🏦 Banca Comercial</div>
+        <div class="area-item">📣 Marketing</div>
+      </div>
+    </section>
+
+    <!-- VACANTES -->
+    <section class="vacancies" id="vacantes">
+      <h2>Vacantes destacadas</h2>
+      <div class="vacancy-grid">
+        <article class="vacancy-card">
+          <h3>Practicante de Productividad</h3>
+          <p>📍 Lima | Híbrido</p>
+          <small>Área: Operaciones</small>
+          <a class="btn-postular" href="#registro">Postular →</a>
+        </article>
+        <article class="vacancy-card">
+          <h3>Practicante de Análisis de Datos</h3>
+          <p>📍 Lima | Híbrido</p>
+          <small>Área: Finanzas</small>
+          <a class="btn-postular" href="#registro">Postular →</a>
+        </article>
+        <article class="vacancy-card">
+          <h3>Practicante de Talento y Cultura</h3>
+          <p>📍 Lima | Híbrido</p>
+          <small>Área: Gestión Humana</small>
+          <a class="btn-postular" href="#registro">Postular →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE REGISTRO FIEL A LA IMAGEN -->
+    <section class="register-section" id="registro">
+      <div class="register-card">
+        <h2>Únete a nuestra base de talento</h2>
+        <p class="subtitle">Déjanos tus datos para recibir información sobre prácticas y convocatorias.</p>
+
+        <form id="talent-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombres y Apellidos *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="dni">DNI / Documento de Identidad *</label>
+              <input type="text" id="dni" name="dni" placeholder="Ej. 76543210" maxlength="12" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="universidad">Universidad *</label>
+            <select id="universidad" name="universidad" required>
+              <option value="">Selecciona Universidad...</option>
+              <option value="Universidad del Pacífico">Universidad del Pacífico</option>
+              <option value="PUCP">Pontificia Universidad Católica del Perú</option>
+              <option value="Universidad de Lima">Universidad de Lima</option>
+              <option value="UPC">Universidad Peruana de Ciencias Aplicadas</option>
+              <option value="Otra">Otra Universidad</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="carrera">Carrera *</label>
+              <select id="carrera" name="carrera" required>
+                <option value="">Selecciona Carrera...</option>
+                <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                <option value="Administración">Administración</option>
+                <option value="Economía">Economía</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Otra">Otra</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ciclo">Ciclo *</label>
+              <select id="ciclo" name="ciclo" required>
+                <option value="">Selecciona Ciclo...</option>
+                <option value="5to Ciclo">5.º ciclo</option>
+                <option value="6to Ciclo">6.º ciclo</option>
+                <option value="7mo Ciclo">7.º ciclo</option>
+                <option value="8vo Ciclo">8.º ciclo</option>
+                <option value="9no Ciclo">9.º ciclo</option>
+                <option value="10mo Ciclo">10.º ciclo</option>
+                <option value="Egresado">Egresado/a</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="area">Área de Interés en BanBif *</label>
+            <select id="area" name="area" required>
+              <option value="">Selecciona Área de Interés...</option>
+              <option value="Tecnología">Tecnología</option>
+              <option value="Data & Analytics">Data & Analytics</option>
+              <option value="Finanzas">Finanzas</option>
+              <option value="Gestión Humana">Gestión Humana</option>
+              <option value="Riesgos">Riesgos</option>
+              <option value="Operaciones">Operaciones</option>
+              <option value="Banca Comercial">Banca Comercial</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="correo">Correo Electrónico *</label>
+              <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+            </div>
+            <div class="form-group">
+              <label for="celular">Celular *</label>
+              <input type="tel" id="celular" name="celular" placeholder="987654321" maxlength="9" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="disponibilidad">Disponibilidad de Horario (30h semanales) *</label>
+            <textarea id="disponibilidad" name="disponibilidad" rows="2" placeholder="Ej. Mañanas libres de 8am a 2pm" required></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cv">Adjunta tu CV <span class="optional">(Opcional)</span></label>
+              <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+            </div>
+            <div class="form-group">
+              <label for="horario">Adjunta tu Horario <span class="optional">(Opcional)</span></label>
+              <input type="file" id="horario" name="horario" accept=".pdf,.png,.jpg,.jpeg">
+            </div>
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="leyData" name="leyData" required>
+            <label for="leyData">
+              Acepto el tratamiento de mis datos personales (<a href="#" id="openModal">Ley N° 29733</a>).
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit">🚀 Registrarme</button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL LEY DE PROTECCIÓN DE DATOS (LEY N° 29733) -->
+  <div id="lawModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Política de Protección de Datos Personales</h3>
+      <p><strong>Ley N° 29733 - Ley de Protección de Datos Personales de Perú</strong></p>
+      <p>En cumplimiento con lo establecido en la Ley N° 29733 y su Reglamento, BanBif informa al postulante que los datos personales que proporcione a través de este formulario serán incorporados a nuestro banco de datos de gestión de talento y reclutamiento.</p>
+      <p><strong>Finalidad:</strong> Evaluar tu perfil académico y profesional para participar en nuestros procesos de selección de prácticas preprofesionales y profesionales.</p>
+      <p><strong>Derechos ARCO:</strong> Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación y oposición respecto a tus datos personales mediante una solicitud dirigida a BanBif.</p>
+      <button class="btn-modal-close" id="acceptLaw">Entendido y Acepto</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 BanBif. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
