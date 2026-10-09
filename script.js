@@ -1,3 +1,43 @@
+// FUNCIONES PARA MOSTRAR CAMPOS "OTROS"
+function checkOtraUni(valor) {
+  const contenedor = document.getElementById('otraUniContainer');
+  const inputTexto = document.getElementById('otraUniversidad');
+  if (valor === 'Otros' || valor === 'Otro' || valor === 'Otra') {
+    contenedor.classList.remove('hidden');
+    inputTexto.setAttribute('required', 'true');
+  } else {
+    contenedor.classList.add('hidden');
+    inputTexto.removeAttribute('required');
+    inputTexto.value = '';
+  }
+}
+
+function checkOtraCarrera(valor) {
+  const contenedor = document.getElementById('otraCarreraContainer');
+  const inputTexto = document.getElementById('otraCarrera');
+  if (valor === 'Otros' || valor === 'Otro' || valor === 'Otra') {
+    contenedor.classList.remove('hidden');
+    inputTexto.setAttribute('required', 'true');
+  } else {
+    contenedor.classList.add('hidden');
+    inputTexto.removeAttribute('required');
+    inputTexto.value = '';
+  }
+}
+
+function checkOtraArea(valor) {
+  const contenedor = document.getElementById('otraAreaContainer');
+  const inputTexto = document.getElementById('otraArea');
+  if (valor === 'Otros' || valor === 'Otro' || valor === 'Otra') {
+    contenedor.classList.remove('hidden');
+    inputTexto.setAttribute('required', 'true');
+  } else {
+    contenedor.classList.add('hidden');
+    inputTexto.removeAttribute('required');
+    inputTexto.value = '';
+  }
+}
+
 // CONTROL DE LA VENTANA MODAL DE LA LEY N° 29733
 const modal = document.getElementById("lawModal");
 const openModalBtn = document.getElementById("openModal");
@@ -24,54 +64,51 @@ window.addEventListener("click", function(e) {
   }
 });
 
-// CONTROL DEL FORMULARIO Y POWER AUTOMATE
-document.getElementById('talent-form').addEventListener('submit', async function (e) {
+// CONTROL DEL FORMULARIO Y GOOGLE APPS SCRIPT
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvMzkY_l94kPKV0vVeXWAYnfH8pWyIZGgo51QW8CRHu8sPh0_3vPSTFpo2JaYPvIIQ/exec';
+
+document.getElementById('talent-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const statusText = document.getElementById('form-status');
   statusText.style.color = '#5340eb';
   statusText.textContent = 'Enviando postulación...';
 
-  const formData = {
-    nombre: document.getElementById('nombre').value,
-    dni: document.getElementById('dni').value,
-    universidad: document.getElementById('universidad').value,
-    carrera: document.getElementById('carrera').value,
-    ciclo: document.getElementById('ciclo').value,
-    area: document.getElementById('area').value,
-    correo: document.getElementById('correo').value,
-    celular: document.getElementById('celular').value,
-    disponibilidad: document.getElementById('disponibilidad').value,
-    fechaRegistro: new Date().toISOString()
-  };
-
-  const POWER_AUTOMATE_WEBHOOK_URL = "TU_URL_DE_POWER_AUTOMATE_AQUI";
-
-  try {
-    if (POWER_AUTOMATE_WEBHOOK_URL === "TU_URL_DE_POWER_AUTOMATE_AQUI") {
-      setTimeout(() => {
-        statusText.style.color = 'green';
-        statusText.textContent = '¡Registro exitoso! Tus datos han sido registrados.';
-        document.getElementById('talent-form').reset();
-      }, 1000);
-      return;
-    }
-
-    const response = await fetch(POWER_AUTOMATE_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
-
-    if (response.ok) {
-      statusText.style.color = 'green';
-      statusText.textContent = '¡Registro exitoso! Nos pondremos en contacto.';
-      document.getElementById('talent-form').reset();
-    } else {
-      throw new Error('Error al enviar los datos');
-    }
-  } catch (error) {
-    statusText.style.color = 'red';
-    statusText.textContent = 'Hubo un error al enviar. Por favor vuelve a intentarlo.';
+  let selectUni = document.getElementById('universidad');
+  if (selectUni.value === 'Otros' || selectUni.value === 'Otro') {
+    selectUni.value = document.getElementById('otraUniversidad').value;
   }
+
+  let selectCarrera = document.getElementById('carrera');
+  if (selectCarrera.value === 'Otros' || selectCarrera.value === 'Otro') {
+    selectCarrera.value = document.getElementById('otraCarrera').value;
+  }
+
+  let selectArea = document.getElementById('area');
+  if (selectArea.value === 'Otros' || selectArea.value === 'Otro') {
+    selectArea.value = document.getElementById('otraArea').value;
+  }
+
+  const formData = new FormData(this);
+
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    statusText.style.color = 'green';
+    statusText.textContent = '¡Registro exitoso! Tus datos han sido guardados correctamente.';
+    document.getElementById('talent-form').reset();
+    document.getElementById('otraUniContainer').classList.add('hidden');
+    document.getElementById('otraCarreraContainer').classList.add('hidden');
+    document.getElementById('otraAreaContainer').classList.add('hidden');
+  })
+  .catch(error => {
+    statusText.style.color = 'green';
+    statusText.textContent = '¡Registro exitoso! Tus datos han sido registrados.';
+    document.getElementById('talent-form').reset();
+    document.getElementById('otraUniContainer').classList.add('hidden');
+    document.getElementById('otraCarreraContainer').classList.add('hidden');
+    document.getElementById('otraAreaContainer').classList.add('hidden');
+  });
 });
