@@ -1,362 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BanBif | Oportunidades para Estudiantes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* Reset y estilos generales */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f6f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* HEADER & BRANDING */
-    .hero-header {
-      background: linear-gradient(135deg, #7c3aed, #4f46e5);
-      color: #fff;
-      padding: 50px 20px 70px;
-      text-align: center;
-      position: relative;
-    }
-
-    /* LOGO OFICIAL BANBIF */
-    .banbif-logo {
-      font-size: 42px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -1px;
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .banbif-logo .dot {
-      width: 12px;
-      height: 12px;
-      border: 3px solid #a3e635;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 1px;
-      position: relative;
-      top: -8px;
-    }
-
-    .main-title {
-      font-size: 32px;
-      font-weight: 800;
-      margin-bottom: 5px;
-      letter-spacing: 0.5px;
-    }
-
-    .tagline {
-      font-size: 15px;
-      opacity: 0.95;
-      font-weight: 600;
-      color: #a3e635;
-    }
-
-    /* CONTENEDOR PRINCIPAL */
-    .container {
-      max-width: 1100px;
-      margin: -40px auto 40px auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .card h2 {
-      font-size: 22px;
-      color: #1f2937;
-      margin-bottom: 8px;
-    }
-
-    .card-subtitle {
-      font-size: 14px;
-      color: #6b7280;
-      margin-bottom: 24px;
-    }
-
-    /* FORMULARIO */
-    .input-group-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-
-    @media (max-width: 550px) {
-      .input-group-row {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .input-group {
-      margin-bottom: 15px;
-    }
-
-    .input-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #374151;
-      margin-bottom: 6px;
-    }
-
-    .input-group input, 
-    .input-group select, 
-    .input-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-family: inherit;
-      font-size: 14px;
-      background: #fff;
-      color: #1f2937;
-      transition: border-color 0.2s;
-    }
-
-    .input-group input:focus, 
-    .input-group select:focus, 
-    .input-group textarea:focus {
-      outline: none;
-      border-color: #4f46e5;
-      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-    }
-
-    .optional-text {
-      font-weight: 400;
-      color: #9ca3af;
-      font-size: 12px;
-    }
-
-    .checkbox-group {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin: 20px 0;
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    .checkbox-group input {
-      margin-top: 3px;
-    }
-
-    .checkbox-group a {
-      color: #4f46e5;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background-color: #4f46e5;
-      color: #fff;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-primary:hover {
-      background-color: #4338ca;
-    }
-
-    /* TARJETA SECUNDARIA */
-    .card-secondary {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      background: linear-gradient(135deg, #f8fafc, #edf2f7);
-      border: 1px solid #e2e8f0;
-    }
-
-    .info-icon { font-size: 32px; margin-bottom: 15px; }
-    .info-content h3 { font-size: 18px; margin-bottom: 8px; color: #1e293b; }
-    .info-content p { font-size: 13px; color: #64748b; margin-bottom: 20px; }
-    .btn-link { color: #4f46e5; text-decoration: none; font-weight: 600; font-size: 14px; }
-    .btn-link:hover { text-decoration: underline; }
-
-    /* SECCIONES Y BANNERS */
-    .section-banner {
-      background: linear-gradient(135deg, #ec4899, #8b5cf6);
-      color: #fff;
-      padding: 15px 25px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 15px;
-      text-align: center;
-      margin: 40px 0 25px 0;
-    }
-
-    .subsection-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: #1f2937;
-      margin: 30px 0 20px 0;
-    }
-
-    /* GRILLA DE OFERTAS LABORALES Y POSTS */
-    .jobs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .job-card, .linkedin-post-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      border: 1px solid #e5e7eb;
-      position: relative;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .job-badge {
-      position: absolute;
-      top: 20px; right: 20px;
-      background: #dbeafe; color: #1d4ed8;
-      font-size: 11px; font-weight: 700;
-      padding: 4px 10px; border-radius: 20px;
-    }
-
-    .job-card h4 { font-size: 16px; color: #111827; margin-bottom: 8px; padding-right: 60px; }
-    .job-details { font-size: 12px; color: #6b7280; margin-bottom: 12px; }
-    .job-desc { font-size: 13px; color: #4b5563; margin-bottom: 20px; }
-
-    .btn-linkedin {
-      background-color: #0a66c2;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-    .btn-linkedin:hover { background-color: #004182; }
-
-    .linkedin-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-    .linkedin-logo-badge {
-      background: #0a66c2; color: white;
-      width: 40px; height: 40px; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: bold; font-size: 18px;
-    }
-    .linkedin-meta h5 { font-size: 15px; color: #111827; }
-    .linkedin-meta span { font-size: 12px; color: #6b7280; }
-    .linkedin-content p { font-size: 14px; color: #374151; margin-bottom: 15px; }
-
-    /* MODAL DE LA LEY */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      backdrop-filter: blur(3px);
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 25px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 500px;
-    }
-
-    .modal-content h3 { color: #4f46e5; margin-bottom: 10px; }
-    .modal-content p { font-size: 13px; color: #4b5563; margin-bottom: 15px; }
-    .close-modal {
-      background: #4f46e5; color: white;
-      border: none; padding: 10px 15px;
-      border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;
-    }
-
-    .hidden { display: none !important; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programa de Practicantes | BanBif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- HEADER CON LOGO OFICIAL -->
-  <header class="hero-header">
-    <div class="hero-content">
-      <div class="banbif-logo">BanB<span class="dot"></span>if</div>
-      <h1 class="main-title">TALENTO BANBIF</h1>
-      <p class="tagline">#TuProximoPasoEmpiezaAqui</p>
-    </div>
+  <!-- ENCABEZADO CON LOGO BANBIF -->
+  <header class="topbar">
+    <a class="brand" href="#inicio">
+      <span class="logo-box">BanB<span class="dot">°</span>if</span>
+    </a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#programa">Programa</a>
+      <a href="#areas">Áreas</a>
+      <a href="#vacantes">Vacantes</a>
+    </nav>
+    <a class="nav-cta" href="#registro">Postula aquí</a>
   </header>
 
-  <!-- CONTENEDOR PRINCIPAL -->
-  <main class="container">
-    
-    <div class="cards-grid">
-      
-      <!-- FORMULARIO DE REGISTRO -->
-      <div class="card" id="registro">
-        <h2>Únete a nuestra base de talento</h2>
-        <p class="card-subtitle">Déjanos tus datos para recibir información sobre prácticas y convocatorias.</p>
-        
-        <form id="formBanBif">
+  <main>
+    <!-- HERO SECCIÓN BANNER -->
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <h1>Impulsa<br><em>tu futuro</em><br>con BanBif</h1>
+        <p>Conecta con oportunidades reales, proyectos retadores y un equipo que cree en tu potencial.</p>
+        <div class="hero-buttons">
+          <a class="btn lime" href="#vacantes">Ver oportunidades →</a>
+          <a class="btn outline" href="#registro">Deja tu CV</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p class="tagline">Personas que hacen que las cosas pasen</p>
+      </div>
+    </section>
 
-          <div class="input-group-row">
-            <div class="input-group">
-              <label for="nombres">Nombres y Apellidos *</label>
-              <input type="text" id="nombres" name="nombres" placeholder="Ej. Ana Pérez" required>
+    <!-- VENTAJAS / POR QUÉ SER PRACTICANTE -->
+    <section class="benefits" id="programa">
+      <h2>¿Por qué ser practicante en BanBif?</h2>
+      <p class="sub">Te damos las herramientas para que llegues tan lejos como quieras.</p>
+      <div class="benefit-grid">
+        <article class="benefit-card">
+          <div class="icon">🚀</div>
+          <h3>Aprendizaje constante</h3>
+          <p>Participa en proyectos reales desde el primer día.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="icon">👥</div>
+          <h3>Acompañamiento</h3>
+          <p>Cuenta con el apoyo de líderes que creen en tu talento.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="icon">💡</div>
+          <h3>Innovación con propósito</h3>
+          <p>Sé parte de un banco que impulsa el cambio.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="icon">🏠</div>
+          <h3>Modalidad flexible</h3>
+          <p>Equilibra tu vida personal y profesional.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ÁREAS -->
+    <section class="areas" id="areas">
+      <h2>Áreas donde puedes desarrollarte</h2>
+      <div class="area-grid">
+        <div class="area-item">💻 Tecnología</div>
+        <div class="area-item">📊 Data & Analytics</div>
+        <div class="area-item">💰 Finanzas</div>
+        <div class="area-item">👥 Gestión Humana</div>
+        <div class="area-item">🛡️ Riesgos</div>
+        <div class="area-item">⚙️ Operaciones</div>
+        <div class="area-item">🏦 Banca Comercial</div>
+        <div class="area-item">📣 Marketing</div>
+      </div>
+    </section>
+
+    <!-- VACANTES -->
+    <section class="vacancies" id="vacantes">
+      <h2>Vacantes destacadas</h2>
+      <div class="vacancy-grid">
+        <article class="vacancy-card">
+          <h3>Practicante Pre Profesional de Financiamientos Estructurados</h3>
+          <p>📍 San Isidro | Híbrido</p>
+          <small>Área: Finanzas / Comercial</small>
+          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular en LinkedIn →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORMULARIO CON ESTRUCTURA ANTERIOR Y OPCIONES ACTUALIZADAS -->
+    <section class="register-section" id="registro">
+      <div class="register-card">
+        <h2>Únete a nuestra base de talento</h2>
+        <p class="subtitle">Déjanos tus datos para recibir información sobre prácticas y convocatorias.</p>
+
+        <form id="talent-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombres y Apellidos *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Pérez" required>
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <label for="dni">DNI / Documento de Identidad *</label>
               <input type="text" id="dni" name="dni" placeholder="Ej. 76543210" maxlength="12" required>
             </div>
           </div>
 
-          <!-- DESPLEGABLE UNIVERSIDADES -->
-          <div class="input-group">
+          <!-- UNIVERSIDAD -->
+          <div class="form-group">
             <label for="universidad">Universidad *</label>
-            <select id="universidad" name="universidad" required onchange="checkOtro('universidad', 'otraUniContainer', 'otraUniversidad')">
+            <select id="universidad" name="universidad" required onchange="checkOtraUni(this.value)">
               <option value="">Selecciona Universidad...</option>
               <option value="PUCP">Pontificia Universidad Católica del Perú (PUCP)</option>
               <option value="UP">Universidad del Pacífico (UP)</option>
@@ -380,16 +142,16 @@
             </select>
           </div>
 
-          <div class="input-group hidden" id="otraUniContainer">
+          <div class="form-group hidden" id="otraUniContainer">
             <label for="otraUniversidad">Especifique su Universidad *</label>
             <input type="text" id="otraUniversidad" name="otraUniversidad" placeholder="Ej. Universidad Nacional de Trujillo">
           </div>
 
-          <div class="input-group-row">
-            <!-- DESPLEGABLE CARRERAS -->
-            <div class="input-group">
+          <div class="form-row">
+            <!-- CARRERA -->
+            <div class="form-group">
               <label for="carrera">Carrera *</label>
-              <select id="carrera" name="carrera" required onchange="checkOtro('carrera', 'otraCarreraContainer', 'otraCarrera')">
+              <select id="carrera" name="carrera" required onchange="checkOtraCarrera(this.value)">
                 <option value="">Selecciona Carrera...</option>
                 <option value="Administración">Administración</option>
                 <option value="Comunicaciones">Comunicaciones</option>
@@ -408,9 +170,9 @@
                 <option value="Otros">Otro / Especifique</option>
               </select>
             </div>
-            
-            <!-- DESPLEGABLE CICLOS DEL 1 AL 12 -->
-            <div class="input-group">
+
+            <!-- CICLO -->
+            <div class="form-group">
               <label for="ciclo">Ciclo *</label>
               <select id="ciclo" name="ciclo" required>
                 <option value="">Selecciona Ciclo...</option>
@@ -431,15 +193,15 @@
             </div>
           </div>
 
-          <div class="input-group hidden" id="otraCarreraContainer">
+          <div class="form-group hidden" id="otraCarreraContainer">
             <label for="otraCarrera">Especifique su Carrera *</label>
             <input type="text" id="otraCarrera" name="otraCarrera" placeholder="Ej. Biología">
           </div>
 
-          <!-- DESPLEGABLE ÁREAS -->
-          <div class="input-group">
-            <label for="areaInteres">Área de Interés en BanBif *</label>
-            <select id="areaInteres" name="areaInteres" required onchange="checkOtro('areaInteres', 'otraAreaContainer', 'otraArea')">
+          <!-- ÁREA DE INTERÉS -->
+          <div class="form-group">
+            <label for="area">Área de Interés en BanBif *</label>
+            <select id="area" name="area" required onchange="checkOtraArea(this.value)">
               <option value="">Selecciona Área de Interés...</option>
               <option value="Inversiones">Inversiones</option>
               <option value="Producto">Producto</option>
@@ -457,185 +219,55 @@
             </select>
           </div>
 
-          <div class="input-group hidden" id="otraAreaContainer">
+          <div class="form-group hidden" id="otraAreaContainer">
             <label for="otraArea">Especifique su Área de Interés *</label>
             <input type="text" id="otraArea" name="otraArea" placeholder="Ej. Auditoría Interna">
           </div>
 
-          <div class="input-group-row">
-            <div class="input-group">
+          <div class="form-row">
+            <div class="form-group">
               <label for="correo">Correo Electrónico *</label>
               <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <label for="celular">Celular *</label>
               <input type="tel" id="celular" name="celular" placeholder="987654321" maxlength="9" required>
             </div>
           </div>
 
-          <div class="input-group">
+          <div class="form-group">
             <label for="disponibilidad">Disponibilidad de Horario (30h semanales) *</label>
             <textarea id="disponibilidad" name="disponibilidad" rows="2" placeholder="Ej. Mañanas libres de 8am a 2pm" required></textarea>
           </div>
 
-          <div class="input-group-row">
-            <div class="input-group">
-              <label for="cv">Adjunta tu CV <span class="optional-text">(Opcional)</span></label>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cv">Adjunta tu CV <span class="optional">(Opcional)</span></label>
               <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
             </div>
-            <div class="input-group">
-              <label for="horario_file">Adjunta tu Horario <span class="optional-text">(Opcional)</span></label>
-              <input type="file" id="horario_file" name="horario_file" accept=".pdf,.png,.jpg,.jpeg">
+            <div class="form-group">
+              <label for="horario">Adjunta tu Horario <span class="optional">(Opcional)</span></label>
+              <input type="file" id="horario" name="horario" accept=".pdf,.png,.jpg,.jpeg">
             </div>
           </div>
 
-          <div class="checkbox-group">
-            <input type="checkbox" id="politica" name="politica" required>
-            <label for="politica">Acepto el tratamiento de mis datos personales (<a onclick="toggleModal(true)">Ley N° 29733</a>).</label>
+          <div class="form-checkbox">
+            <input type="checkbox" id="leyData" name="leyData" required>
+            <label for="leyData">
+              Acepto el tratamiento de mis datos personales (<a href="#" id="openModal">Ley N° 29733</a>).
+            </label>
           </div>
 
-          <button type="submit" class="btn-primary">🚀 Registrarme</button>
+          <button type="submit" class="btn-submit">🚀 Registrarme</button>
+          <p id="form-status" class="form-status"></p>
         </form>
       </div>
-
-      <!-- TARJETA INFORMACIÓN -->
-      <div class="card card-secondary">
-        <div class="info-icon">❓</div>
-        <div class="info-content">
-          <h3>¡Conoce más de BanBif!</h3>
-          <p>Descubre nuestra cultura, beneficios y por qué somos uno de los mejores lugares para empezar tu carrera.</p>
-          <a href="https://www.banbif.com.pe/trabaja-con-nosotros" class="btn-link" target="_blank">Visítanos aquí →</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- BANNER DE NOVEDADES -->
-    <div class="section-banner">
-      📢 CONVOCATORIAS ABIERTAS Y CONTENIDO RECIENTE
-    </div>
-
-    <!-- VACANTES Y CONTENIDO -->
-    <h3 class="subsection-title">💼 Ofertas para Prácticas Preprofesionales</h3>
-    <div class="jobs-grid">
-      <div class="job-card">
-        <span class="job-badge">Activa</span>
-        <h4>Practicante Pre Profesional de Financiamientos Estructurados</h4>
-        <p class="job-details">📍 San Isidro (Híbrido) | 🎓 Estudiantes universitarios</p>
-        <p class="job-desc">
-          <strong>¿Cuál será tu reto?</strong><br>
-          • Asistir en la evaluación crediticia y estructuración de financiamientos.<br>
-          • Solicitar información a clientes para propuestas de crédito.<br>
-          • Apoyar en funciones asignadas por la gerencia del área.
-        </p>
-        <a href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank" class="btn-linkedin">Postular en LinkedIn 🔗</a>
-      </div>
-    </div>
-
-    <h3 class="subsection-title">🏆 Orgullo BanBif en LinkedIn</h3>
-    <div class="jobs-grid">
-      <div class="linkedin-post-card">
-        <div class="linkedin-header">
-          <div class="linkedin-logo-badge">in</div>
-          <div class="linkedin-meta">
-            <h5>BanBif • Publicación Oficial</h5>
-            <span>Top 13 Mejores Lugares para Hacer Prácticas 🚀</span>
-          </div>
-        </div>
-        <div class="linkedin-content">
-          <p>¡Seguimos sumando logros! Nos ubicamos en el <strong>Top 13 del ranking BIE</strong> como uno de los mejores lugares para hacer prácticas en el Perú.</p>
-        </div>
-        <a href="https://www.linkedin.com/posts/banbif_orgullobanbif-equipobanbif-bieperu-activity-7506776453351362560-khKd" target="_blank" class="btn-linkedin">Ver publicación en LinkedIn 🔗</a>
-      </div>
-
-      <div class="linkedin-post-card">
-        <div class="linkedin-header">
-          <div class="linkedin-logo-badge">in</div>
-          <div class="linkedin-meta">
-            <h5>BanBif • Publicación Oficial</h5>
-            <span>¡Olimpiadas BanBif! 🏅</span>
-          </div>
-        </div>
-        <div class="linkedin-content">
-          <p>Compartimos los mejores momentos de nuestras <strong>Olimpiadas BanBif</strong>, integrando a nuestro equipo más allá de las oficinas.</p>
-        </div>
-        <a href="https://www.linkedin.com/posts/banbif_orgullobanbif-equipobanbif-olimpiadasbanbif-activity-7506478964568190976-VZgV" target="_blank" class="btn-linkedin">Ver publicación en LinkedIn 🔗</a>
-      </div>
-    </div>
-
+    </section>
   </main>
 
-  <!-- MODAL DE LEY DE PROTECCIÓN DE DATOS -->
+  <!-- MODAL DE LA LEY N° 29733 -->
   <div id="lawModal" class="modal">
     <div class="modal-content">
-      <h3>Ley N° 29733 - Protección de Datos</h3>
-      <p>Sus datos personales serán tratados de forma confidencial únicamente para la evaluación de perfiles en el proceso de selección de prácticas preprofesionales y profesionales de BanBif.</p>
-      <button class="close-modal" onclick="toggleModal(false)">Entendido</button>
-    </div>
-  </div>
-
-  <!-- JS Y CONEXIÓN BASE DE DATOS -->
-  <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvMzkY_l94kPKV0vVeXWAYnfH8pWyIZGgo51QW8CRHu8sPh0_3vPSTFpo2JaYPvIIQ/exec';
-
-    function checkOtro(selectId, containerId, inputId) {
-      const select = document.getElementById(selectId);
-      const container = document.getElementById(containerId);
-      const input = document.getElementById(inputId);
-
-      if (select.value === 'Otros' || select.value === 'Otro' || select.value === 'Otra') {
-        container.classList.remove('hidden');
-        input.setAttribute('required', 'true');
-      } else {
-        container.classList.add('hidden');
-        input.removeAttribute('required');
-        input.value = '';
-      }
-    }
-
-    function toggleModal(show) {
-      document.getElementById('lawModal').style.display = show ? 'block' : 'none';
-      if(show) document.getElementById('politica').checked = true;
-    }
-
-    const form = document.getElementById('formBanBif');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const btnSubmit = form.querySelector('button[type="submit"]');
-
-      // Si seleccionó otro, reemplaza el valor con el texto libre antes del envío
-      ['universidad', 'carrera', 'areaInteres'].forEach(id => {
-        const select = document.getElementById(id);
-        const inputMap = { 'universidad': 'otraUniversidad', 'carrera': 'otraCarrera', 'areaInteres': 'otraArea' };
-        if (select.value === 'Otros' || select.value === 'Otro') {
-          select.value = document.getElementById(inputMap[id]).value;
-        }
-      });
-
-      const originalText = btnSubmit.innerHTML;
-      btnSubmit.innerHTML = '⌛ Enviando registro...';
-      btnSubmit.disabled = true;
-
-      const formData = new FormData(form);
-
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert('¡Registro exitoso! Tus datos han sido guardados correctamente.');
-        form.reset();
-      })
-      .catch(error => {
-        alert('¡Registro exitoso! Tus datos han sido registrados correctamente.');
-        form.reset();
-      })
-      .finally(() => {
-        btnSubmit.innerHTML = originalText;
-        btnSubmit.disabled = false;
-      });
-    });
-  </script>
-</body>
-</html>
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Política de Protección de Datos Personales</h3>
+      <p><strong>Ley N°
