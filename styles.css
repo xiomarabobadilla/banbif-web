@@ -17,7 +17,7 @@ body {
   line-height: 1.1;
 }
 
-/* TOPBAR Y LOGO EXACTO BANBIF */
+/* TOPBAR FIJA CON LOGO */
 .topbar {
   background: #FFFFFF;
   position: sticky;
@@ -167,7 +167,6 @@ body {
 }
 .avatar-group img:first-child { margin-left: 0; }
 
-/* FOTO HERO */
 .photo-card-frame {
   position: relative;
   border-radius: 28px;
@@ -202,7 +201,7 @@ body {
   font-weight: 700;
 }
 
-/* SECCIONES */
+/* SECCIONES Y GENERALES */
 section {
   padding: 4.5rem 2rem;
   max-width: 1200px;
@@ -241,7 +240,7 @@ h2 {
 .b-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
 .b-card p { font-size: 0.9rem; color: #64748B; line-height: 1.5; }
 
-/* VIDEOS INTERACTIVOS */
+/* VIDEOS / HISTORIAS */
 .stories-container {
   display: grid;
   grid-template-columns: 1fr 2.2fr;
@@ -340,7 +339,62 @@ h2 {
 .v-area { font-size: 0.82rem; color: #4F46E5; font-weight: 700; margin: 10px 0 18px 0; }
 .btn-postular-pill { display: inline-block; padding: 8px 20px; border-radius: 999px; background: #EFF6FF; color: #2563EB; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
 
-/* FORMULARIO ESTILO TARJETA */
+/* PREGUNTAS FRECUENTES (FAQ) */
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0F172A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question span {
+  font-size: 1.4rem;
+  color: #4F46E5;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+  color: #64748B;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 1.5rem 1.2rem 1.5rem;
+}
+
+.faq-item.active .faq-question span {
+  transform: rotate(45deg);
+}
+
+/* FORMULARIO ESTILO TARJETA BANBIF */
 .form-container-section {
   background: linear-gradient(180deg, #4F46E5 0%, #3730A3 100%);
   border-radius: 32px; padding: 3.5rem 1.5rem; max-width: 800px; margin: 4rem auto;
