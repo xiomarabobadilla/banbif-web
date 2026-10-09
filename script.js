@@ -1,114 +1,127 @@
-// FUNCIONES PARA MOSTRAR CAMPOS "OTROS"
-function checkOtraUni(valor) {
-  const contenedor = document.getElementById('otraUniContainer');
-  const inputTexto = document.getElementById('otraUniversidad');
-  if (valor === 'Otros' || valor === 'Otro' || valor === 'Otra') {
-    contenedor.classList.remove('hidden');
-    inputTexto.setAttribute('required', 'true');
-  } else {
-    contenedor.classList.add('hidden');
-    inputTexto.removeAttribute('required');
-    inputTexto.value = '';
-  }
-}
+document.addEventListener("DOMContentLoaded", function () {
+  
+  // LOGICA PARA MOSTRAR / OCULTAR CAMPOS "OTROS"
+  const uniSelect = document.getElementById('universidad');
+  const otraUniContainer = document.getElementById('otraUniContainer');
+  const otraUniInput = document.getElementById('otraUniversidad');
 
-function checkOtraCarrera(valor) {
-  const contenedor = document.getElementById('otraCarreraContainer');
-  const inputTexto = document.getElementById('otraCarrera');
-  if (valor === 'Otros' || valor === 'Otro' || valor === 'Otra') {
-    contenedor.classList.remove('hidden');
-    inputTexto.setAttribute('required', 'true');
-  } else {
-    contenedor.classList.add('hidden');
-    inputTexto.removeAttribute('required');
-    inputTexto.value = '';
-  }
-}
-
-function checkOtraArea(valor) {
-  const contenedor = document.getElementById('otraAreaContainer');
-  const inputTexto = document.getElementById('otraArea');
-  if (valor === 'Otros' || valor === 'Otro' || valor === 'Otra') {
-    contenedor.classList.remove('hidden');
-    inputTexto.setAttribute('required', 'true');
-  } else {
-    contenedor.classList.add('hidden');
-    inputTexto.removeAttribute('required');
-    inputTexto.value = '';
-  }
-}
-
-// CONTROL DE LA VENTANA MODAL DE LA LEY N° 29733
-const modal = document.getElementById("lawModal");
-const openModalBtn = document.getElementById("openModal");
-const closeModalBtn = document.getElementById("closeModal");
-const acceptLawBtn = document.getElementById("acceptLaw");
-
-openModalBtn.addEventListener("click", function(e) {
-  e.preventDefault();
-  modal.style.display = "block";
-});
-
-closeModalBtn.addEventListener("click", function() {
-  modal.style.display = "none";
-});
-
-acceptLawBtn.addEventListener("click", function() {
-  modal.style.display = "none";
-  document.getElementById("leyData").checked = true;
-});
-
-window.addEventListener("click", function(e) {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-
-// CONTROL DEL FORMULARIO Y GOOGLE APPS SCRIPT
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvMzkY_l94kPKV0vVeXWAYnfH8pWyIZGgo51QW8CRHu8sPh0_3vPSTFpo2JaYPvIIQ/exec';
-
-document.getElementById('talent-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const statusText = document.getElementById('form-status');
-  statusText.style.color = '#5340eb';
-  statusText.textContent = 'Enviando postulación...';
-
-  let selectUni = document.getElementById('universidad');
-  if (selectUni.value === 'Otros' || selectUni.value === 'Otro') {
-    selectUni.value = document.getElementById('otraUniversidad').value;
-  }
-
-  let selectCarrera = document.getElementById('carrera');
-  if (selectCarrera.value === 'Otros' || selectCarrera.value === 'Otro') {
-    selectCarrera.value = document.getElementById('otraCarrera').value;
-  }
-
-  let selectArea = document.getElementById('area');
-  if (selectArea.value === 'Otros' || selectArea.value === 'Otro') {
-    selectArea.value = document.getElementById('otraArea').value;
-  }
-
-  const formData = new FormData(this);
-
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    statusText.style.color = 'green';
-    statusText.textContent = '¡Registro exitoso! Tus datos han sido guardados correctamente.';
-    document.getElementById('talent-form').reset();
-    document.getElementById('otraUniContainer').classList.add('hidden');
-    document.getElementById('otraCarreraContainer').classList.add('hidden');
-    document.getElementById('otraAreaContainer').classList.add('hidden');
-  })
-  .catch(error => {
-    statusText.style.color = 'green';
-    statusText.textContent = '¡Registro exitoso! Tus datos han sido registrados.';
-    document.getElementById('talent-form').reset();
-    document.getElementById('otraUniContainer').classList.add('hidden');
-    document.getElementById('otraCarreraContainer').classList.add('hidden');
-    document.getElementById('otraAreaContainer').classList.add('hidden');
+  uniSelect.addEventListener('change', function () {
+    if (this.value === 'Otros') {
+      otraUniContainer.classList.remove('hidden');
+      otraUniInput.setAttribute('required', 'true');
+    } else {
+      otraUniContainer.classList.add('hidden');
+      otraUniInput.removeAttribute('required');
+      otraUniInput.value = '';
+    }
   });
+
+  const carreraSelect = document.getElementById('carrera');
+  const otraCarreraContainer = document.getElementById('otraCarreraContainer');
+  const otraCarreraInput = document.getElementById('otraCarrera');
+
+  carreraSelect.addEventListener('change', function () {
+    if (this.value === 'Otros') {
+      otraCarreraContainer.classList.remove('hidden');
+      otraCarreraInput.setAttribute('required', 'true');
+    } else {
+      otraCarreraContainer.classList.add('hidden');
+      otraCarreraInput.removeAttribute('required');
+      otraCarreraInput.value = '';
+    }
+  });
+
+  const areaSelect = document.getElementById('area');
+  const otraAreaContainer = document.getElementById('otraAreaContainer');
+  const otraAreaInput = document.getElementById('otraArea');
+
+  areaSelect.addEventListener('change', function () {
+    if (this.value === 'Otros') {
+      otraAreaContainer.classList.remove('hidden');
+      otraAreaInput.setAttribute('required', 'true');
+    } else {
+      otraAreaContainer.classList.add('hidden');
+      otraAreaInput.removeAttribute('required');
+      otraAreaInput.value = '';
+    }
+  });
+
+  // MODAL DE LEY N° 29733
+  const modal = document.getElementById("lawModal");
+  const openModalBtn = document.getElementById("openModal");
+  const closeModalBtn = document.getElementById("closeModal");
+  const acceptLawBtn = document.getElementById("acceptLaw");
+
+  if (openModalBtn) {
+    openModalBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    });
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+  }
+
+  if (acceptLawBtn) {
+    acceptLawBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+      document.getElementById("leyData").checked = true;
+    });
+  }
+
+  window.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // ENVÍO DE FORMULARIO A GOOGLE APPS SCRIPT
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyvMzkY_l94kPKV0vVeXWAYnfH8pWyIZGgo51QW8CRHu8sPh0_3vPSTFpo2JaYPvIIQ/exec';
+  const talentForm = document.getElementById('talent-form');
+
+  talentForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const statusText = document.getElementById('form-status');
+    statusText.style.color = '#5340eb';
+    statusText.textContent = 'Enviando postulación...';
+
+    // Reemplaza valor de "Otros" antes de enviar
+    if (uniSelect.value === 'Otros') {
+      uniSelect.value = otraUniInput.value;
+    }
+    if (carreraSelect.value === 'Otros') {
+      carreraSelect.value = otraCarreraInput.value;
+    }
+    if (areaSelect.value === 'Otros') {
+      areaSelect.value = otraAreaInput.value;
+    }
+
+    const formData = new FormData(this);
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      statusText.style.color = 'green';
+      statusText.textContent = '¡Registro exitoso! Tus datos han sido guardados correctamente.';
+      talentForm.reset();
+      otraUniContainer.classList.add('hidden');
+      otraCarreraContainer.classList.add('hidden');
+      otraAreaContainer.classList.add('hidden');
+    })
+    .catch(error => {
+      statusText.style.color = 'green';
+      statusText.textContent = '¡Registro exitoso! Tus datos han sido registrados.';
+      talentForm.reset();
+      otraUniContainer.classList.add('hidden');
+      otraCarreraContainer.classList.add('hidden');
+      otraAreaContainer.classList.add('hidden');
+    });
+  });
+
 });
