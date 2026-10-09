@@ -490,3 +490,17 @@ footer { text-align: center; padding: 2.5rem; background: #0F172A; color: #64748
   max-height: 40px !important;
   overflow: hidden !important;
 }
+/* AJUSTE FIJO PARA EL LOGO OFICIAL BANBIF */
+.brand {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.banbif-logo-img {
+  height: 38px !important;
+  width: auto !important;
+  max-width: 170px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
