@@ -504,3 +504,15 @@ footer { text-align: center; padding: 2.5rem; background: #0F172A; color: #64748
   object-fit: contain !important;
   display: block !important;
 }
+/* CONTROL DEL LOGO VECTORIAL SVG BANBIF */
+.banbif-logo-svg {
+  height: 38px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+.brand {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
