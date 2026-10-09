@@ -11,33 +11,43 @@
 </head>
 <body>
 
-  <!-- ENCABEZADO CON LOGO BANBIF -->
+  <!-- ENCABEZADO CON NAVEGACIÓN COMPLETA -->
   <header class="topbar">
     <a class="brand" href="#inicio">
       <span class="logo-box">BanB<span class="dot">°</span>if</span>
     </a>
-    <nav>
+    <nav class="nav-menu">
       <a href="#inicio">Inicio</a>
-      <a href="#programa">Programa</a>
+      <a href="#programa">Conócenos</a>
+      <a href="#programa">Programa de Practicantes</a>
       <a href="#areas">Áreas</a>
-      <a href="#vacantes">Vacantes</a>
+      <a href="#historias">Historias</a>
+      <a href="#faq">Preguntas Frecuentes</a>
     </nav>
-    <a class="nav-cta" href="#registro">Postula aquí</a>
+    <a class="nav-cta" href="#registro">Postula aquí →</a>
   </header>
 
   <main>
     <!-- HERO SECCIÓN BANNER -->
     <section class="hero" id="inicio">
       <div class="hero-copy">
+        <span class="badge-sub">PROGRAMA DE PRACTICANTES BANBIF</span>
         <h1>Impulsa<br><em>tu futuro</em><br>con BanBif</h1>
-        <p>Conecta con oportunidades reales, proyectos retadores y un equipo que cree en tu potencial.</p>
+        <p>Conecta con oportunidades reales, proyectos retadores y líderes que creen en tu potencial.</p>
         <div class="hero-buttons">
           <a class="btn lime" href="#vacantes">Ver oportunidades →</a>
           <a class="btn outline" href="#registro">Deja tu CV</a>
         </div>
+        <div class="social-proof">
+          <span class="avatars">👥👥👥</span>
+          <span><strong>+100 jóvenes</strong> ya vienen construyendo su historia en BanBif</span>
+        </div>
       </div>
-      <div class="hero-card">
-        <p class="tagline">Personas que hacen que las cosas pasen</p>
+      <div class="hero-card-badge">
+        <p class="tagline-hand font-hand">Personas que hacen que las cosas pasen</p>
+        <div class="hero-tag-box">
+          <span>Más que un banco, un lugar donde puedes ser tú 💜</span>
+        </div>
       </div>
     </section>
 
@@ -69,11 +79,45 @@
       </div>
     </section>
 
+    <!-- HISTORIAS QUE INSPIRAN -->
+    <section class="stories" id="historias">
+      <div class="stories-header">
+        <div>
+          <h2>Historias<br><span class="highlight-purple">que inspiran</span></h2>
+          <p>Conoce la experiencia de nuestros practicantes y descubre todo lo que puedes lograr en BanBif.</p>
+          <a href="#historias" class="btn-text">Ver todas las historias →</a>
+        </div>
+        <div class="stories-grid">
+          <div class="story-card">
+            <div class="play-btn">▶</div>
+            <h4>Valeria</h4>
+            <p class="role">Practicante de Riesgos</p>
+            <p class="quote">"En BanBif encontré un espacio para aprender, aportar y crecer profesionalmente."</p>
+          </div>
+          <div class="story-card">
+            <div class="play-btn">▶</div>
+            <h4>Diego</h4>
+            <p class="role">Practicante de Tecnología</p>
+            <p class="quote">"Desde el primer día participé en proyectos desafiantes que realmente generan impacto."</p>
+          </div>
+          <div class="story-card">
+            <div class="play-btn">▶</div>
+            <h4>Camila</h4>
+            <p class="role">Practicante de Gestión Humana</p>
+            <p class="quote">"Lo mejor de BanBif son las personas y la oportunidad de desarrollar todo mi potencial."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ÁREAS -->
     <section class="areas" id="areas">
-      <h2>Áreas donde puedes desarrollarte</h2>
+      <div class="areas-top">
+        <h2>Áreas donde puedes desarrollarte</h2>
+        <a href="#areas" class="link-more">Conoce todas las áreas →</a>
+      </div>
       <div class="area-grid">
-        <div class="area-item">💻 Tecnología</div>
+        <div class="area-item">💻 Tecnologia</div>
         <div class="area-item">📊 Data & Analytics</div>
         <div class="area-item">💰 Finanzas</div>
         <div class="area-item">👥 Gestión Humana</div>
@@ -84,20 +128,58 @@
       </div>
     </section>
 
-    <!-- VACANTES -->
+    <!-- BANNER LLAMADO A ACCIÓN -->
+    <section class="cta-banner">
+      <div class="cta-content">
+        <h2>¿Listo para dar el primer paso?</h2>
+        <p>Explora nuestras vacantes o déjanos tu CV aunque no encuentres una posición activa. ¡Queremos conocerte!</p>
+        <div class="cta-buttons">
+          <a class="btn lime" href="#vacantes">Ver vacantes →</a>
+          <a class="btn outline" href="#registro">Dejar mi CV</a>
+        </div>
+      </div>
+      <div class="cta-card">
+        <p class="font-hand">Tu historia también puede estar aquí</p>
+        <ul>
+          <li>⭐ Nuevas experiencias</li>
+          <li>👥 Grandes personas</li>
+          <li>💙 Un mejor futuro</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VACANTES DESTACADAS -->
     <section class="vacancies" id="vacantes">
-      <h2>Vacantes destacadas</h2>
+      <div class="vacancies-top">
+        <h2>Vacantes destacadas</h2>
+        <a href="#vacantes" class="link-more">Ver todas las vacantes →</a>
+      </div>
       <div class="vacancy-grid">
         <article class="vacancy-card">
-          <h3>Practicante Pre Profesional de Financiamientos Estructurados</h3>
-          <p>📍 San Isidro | Híbrido</p>
-          <small>Área: Finanzas / Comercial</small>
-          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular en LinkedIn →</a>
+          <div class="v-icon">📄</div>
+          <h3>Practicante de Productividad</h3>
+          <p>📍 Lima | Híbrido</p>
+          <small>Área: Operaciones</small>
+          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular →</a>
+        </article>
+        <article class="vacancy-card">
+          <div class="v-icon">📊</div>
+          <h3>Practicante de Análisis de Datos</h3>
+          <p>📍 Lima | Híbrido</p>
+          <small>Área: Finanzas</small>
+          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular →</a>
+        </article>
+        <article class="vacancy-card">
+          <div class="v-icon">👥</div>
+          <h3>Practicante de Talento y Cultura</h3>
+          <p>📍 Lima | Híbrido</p>
+          <small>Área: Gestión Humana</small>
+          <a class="btn-postular" href="https://www.linkedin.com/jobs/view/4465860864/" target="_blank">Postular →</a>
         </article>
       </div>
     </section>
 
-    <!-- FORMULARIO BANBIF -->
+    <!-- SECCIÓN BASE DE DATOS / FORMULARIO REGISTRO -->
     <section class="register-section" id="registro">
       <div class="register-card">
         <h2>Únete a nuestra base de talento</h2>
