@@ -97,7 +97,7 @@
       </div>
     </section>
 
-    <!-- FORMULARIO CON ESTRUCTURA ANTERIOR Y OPCIONES ACTUALIZADAS -->
+    <!-- FORMULARIO BANBIF -->
     <section class="register-section" id="registro">
       <div class="register-card">
         <h2>Únete a nuestra base de talento</h2>
@@ -118,7 +118,7 @@
           <!-- UNIVERSIDAD -->
           <div class="form-group">
             <label for="universidad">Universidad *</label>
-            <select id="universidad" name="universidad" required onchange="checkOtraUni(this.value)">
+            <select id="universidad" name="universidad" required>
               <option value="">Selecciona Universidad...</option>
               <option value="PUCP">Pontificia Universidad Católica del Perú (PUCP)</option>
               <option value="UP">Universidad del Pacífico (UP)</option>
@@ -151,7 +151,7 @@
             <!-- CARRERA -->
             <div class="form-group">
               <label for="carrera">Carrera *</label>
-              <select id="carrera" name="carrera" required onchange="checkOtraCarrera(this.value)">
+              <select id="carrera" name="carrera" required>
                 <option value="">Selecciona Carrera...</option>
                 <option value="Administración">Administración</option>
                 <option value="Comunicaciones">Comunicaciones</option>
@@ -201,7 +201,7 @@
           <!-- ÁREA DE INTERÉS -->
           <div class="form-group">
             <label for="area">Área de Interés en BanBif *</label>
-            <select id="area" name="area" required onchange="checkOtraArea(this.value)">
+            <select id="area" name="area" required>
               <option value="">Selecciona Área de Interés...</option>
               <option value="Inversiones">Inversiones</option>
               <option value="Producto">Producto</option>
@@ -270,4 +270,18 @@
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
       <h3>Política de Protección de Datos Personales</h3>
-      <p><strong>Ley N°
+      <p><strong>Ley N° 29733 - Ley de Protección de Datos Personales de Perú</strong></p>
+      <p>En cumplimiento con lo establecido en la Ley N° 29733 y su Reglamento, BanBif informa al postulante que los datos personales que proporcione a través de este formulario serán incorporados a nuestro banco de datos de gestión de talento y reclutamiento.</p>
+      <p><strong>Finalidad:</strong> Evaluar tu perfil académico y profesional para participar en nuestros procesos de selección de prácticas preprofesionales y profesionales.</p>
+      <p><strong>Derechos ARCO:</strong> Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación y oposición respecto a tus datos personales mediante una solicitud dirigida a BanBif.</p>
+      <button class="btn-modal-close" id="acceptLaw">Entendido y Acepto</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 BanBif. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
